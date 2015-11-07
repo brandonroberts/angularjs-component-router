@@ -45,6 +45,6 @@ function AppDirectiveController($router) {
 			path: '/**',
 			component: 'notfound',
 			as: 'NotFound'
-		},
+		}
 	]);
 }
