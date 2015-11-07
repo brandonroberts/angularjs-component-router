@@ -1,4 +1,5 @@
 angular.module('app.about', []).component('about', {
+  restrict: 'EA',
 	templateUrl: 'components/about/about.html',
 	controller: AboutController
 });

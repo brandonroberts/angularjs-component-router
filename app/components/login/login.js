@@ -1,4 +1,5 @@
 angular.module('app.login', ['app.services.auth']).component('login', {
+	restrict: 'EA',
 	templateUrl: 'components/login/login.html',
 	controller: ['Auth', LoginController],
 	controllerAs: 'vm'
