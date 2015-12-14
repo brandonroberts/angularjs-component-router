@@ -1,7 +1,8 @@
 angular.module('app.about', []).component('about', {
   restrict: 'EA',
-	templateUrl: 'components/about/about.html',
-	controller: AboutController
+	template: 'About {{ vm.name }}',
+	controller: AboutController,
+  controllerAs: 'vm'
 });
 
 function AboutController() {
