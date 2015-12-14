@@ -7,6 +7,6 @@ angular.module('app.about', []).component('about', {
 function AboutController() {
 }
 
-AboutController.prototype.$onActivate = function(toRoute, fromRoute) {
+AboutController.prototype.$routerOnActivate = function(toRoute, fromRoute) {
 	this.name = toRoute.params.name;
 }

@@ -24,27 +24,27 @@ function AppDirectiveController($router) {
 		{
 			path: '/',
 			component: 'home',
-			as: 'Home'
+			name: 'Home'
 		},
 		{
 			path: '/about/:name',
 			component: 'about',
-			as: 'About'
+			name: 'About'
 		},
 		{
 			path: '/login',
 			component: 'login',
-			as: 'Login'
+			name: 'Login'
 		},
 		{
 			path: '/admin/...',
 			component: 'admin',
-			as: 'Admin'
+			name: 'Admin'
 		},
 		{
 			path: '/**',
 			component: 'notfound',
-			as: 'NotFound'
+			name: 'NotFound'
 		}
 	]);
 }

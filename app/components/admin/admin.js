@@ -6,7 +6,7 @@ angular.module('app.admin', []).component('admin', {
 	  {
 	    path: '/dashboard',
 	    component: 'dashboard',
-	    as: 'Dashboard'
+	    name: 'Dashboard'
 	  }
 	]
 });
