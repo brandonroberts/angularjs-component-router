@@ -4,6 +4,7 @@ var watch = require('gulp-watch');
 var connect = require('gulp-connect');
 var ngTemplates = require('gulp-ng-templates');
 var sourcemaps = require('gulp-sourcemaps');
+var headerfooter = require('gulp-headerfooter');
 
 gulp.task('default', [
     'build','deps',
@@ -35,6 +36,8 @@ gulp.task('build', function() {
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('bundle.js'))
+    .pipe(headerfooter.header("(function() {\n"))
+    .pipe(headerfooter.footer("}());\n"))    
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/'));
 });
