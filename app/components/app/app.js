@@ -9,17 +9,12 @@ var app = angular.module('myApp', [
 	'app.404'
 ]);
 
-app.directive('app', AppDirective);
+app.component('app', {
+	templateUrl: 'components/app/app.html',
+	controller: ['$router', 'Auth', AppComponentController]
+});
 
-function AppDirective() {
-	return {
-		restrict: 'E',
-		templateUrl: 'components/app/app.html',
-		controller: ['$router', 'Auth', AppDirectiveController]
-	};
-}
-
-function AppDirectiveController($router) {
+function AppComponentController($router) {
 	$router.config([
 		{
 			path: '/',

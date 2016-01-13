@@ -1,15 +1,19 @@
-angular.module('app.admin', []).component('admin', {
-	restrict: 'EA',
-	templateUrl: 'components/admin/admin.html',
-	controller: AdminController,
-	$routeConfig: [
-	  {
-	    path: '/dashboard',
-	    component: 'dashboard',
-	    name: 'Dashboard'
-	  }
-	]
-});
+angular.module('app.admin', []).directive('admin', AdminRoute);
+
+function AdminRoute() {
+	return {
+		templateUrl: 'components/admin/admin.html',
+		controller: AdminController
+	};
+}
+
+AdminRoute.$routeConfig = [
+	{
+		path: '/dashboard',
+		component: 'dashboard',
+		name: 'Dashboard'
+	}
+];
 
 function AdminController() {
 }

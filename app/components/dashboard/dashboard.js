@@ -1,11 +1,22 @@
-angular.module('app.admin.dashboard', []).component('dashboard', {
-  restrict: 'EA',
-	templateUrl: 'components/dashboard/dashboard.html',
-	controller: DashboardController,
-	$canActivate: ['Auth', function(Auth) {
-		return Auth.check();
-	}]
-});
+angular.module('app.admin.dashboard', []).directive('dashboard', DashboardRoute);
+
+function DashboardRoute() {
+  return  {
+  	templateUrl: 'components/dashboard/dashboard.html',
+  	controller: DashboardController
+  };
+}
+
+DashboardRoute.$canActivate = ['Auth', '$router', function(Auth, $router) {
+  return Auth.check().then(function(auth) {
+    if (auth) {
+      return true;
+    } else {
+      $router.navigate(['/Login']);
+      return false;
+    }
+  });
+}];
 
 function DashboardController() {
 }

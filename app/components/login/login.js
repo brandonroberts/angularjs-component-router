@@ -1,9 +1,12 @@
-angular.module('app.login', ['app.services.auth']).component('login', {
-	restrict: 'EA',
-	templateUrl: 'components/login/login.html',
-	controller: ['Auth', LoginController],
-	controllerAs: 'vm'
-});
+angular.module('app.login', ['app.services.auth']).directive('login', LoginRoute);
+
+function LoginRoute(){
+	return {
+		templateUrl: 'components/login/login.html',
+		controller: ['Auth', LoginController],
+		controllerAs: 'vm'
+	};
+}
 
 function LoginController(Auth) {
 	var _this = this;
