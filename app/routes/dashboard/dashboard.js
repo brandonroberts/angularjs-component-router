@@ -2,7 +2,7 @@ angular.module('app.admin.dashboard', []).directive('dashboard', DashboardRoute)
 
 function DashboardRoute() {
   return  {
-  	templateUrl: 'components/dashboard/dashboard.html',
+  	templateUrl: 'routes/dashboard/dashboard.html',
   	controller: DashboardController
   };
 }

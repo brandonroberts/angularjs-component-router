@@ -2,7 +2,7 @@ angular.module('app.admin', []).directive('admin', AdminRoute);
 
 function AdminRoute() {
 	return {
-		templateUrl: 'components/admin/admin.html',
+		templateUrl: 'routes/admin/admin.html',
 		controller: AdminController
 	};
 }
