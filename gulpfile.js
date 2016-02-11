@@ -36,8 +36,8 @@ gulp.task('build', function() {
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('bundle.js'))
-    .pipe(headerfooter.header("(function() {\n"))
-    .pipe(headerfooter.footer("}());\n"))    
+    //.pipe(headerfooter.header("(function() {\n"))
+    //.pipe(headerfooter.footer("}());\n"))    
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/'));
 });
