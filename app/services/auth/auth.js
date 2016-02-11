@@ -17,3 +17,7 @@ Auth.prototype.check = function() {
 		resolve(_this.loggedIn);
 	});
 }
+
+Auth.prototype.logout = function() {
+	this.loggedIn = false;
+}

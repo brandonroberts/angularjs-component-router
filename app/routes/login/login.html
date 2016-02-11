@@ -1,6 +1,6 @@
-<form ng-if="!vm.authenticated">
+<form ng-if="!vm.Auth.loggedIn">
 	<input type="text" ng-model="vm.username">
 	<input type="password" ng-model="vm.password">
 	<button ng-click="vm.login()" value="Login">Login</button>
 </form>
-<p ng-if="vm.authenticated">You are logged in!</p>
+<p ng-if="vm.Auth.loggedIn">You are logged in!</p>

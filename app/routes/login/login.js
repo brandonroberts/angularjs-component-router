@@ -5,19 +5,11 @@ angular.module('app.login', ['app.services.auth']).component('login', {
 });
 
 function LoginController(Auth) {
-	var _this = this;
+	var vm = this;
 
-	this.Auth = Auth;
-	this.Auth.check()
-		.then(function(result) {
-			_this.authenticated = result;
-		});
-}
+	vm.Auth = Auth;
 
-LoginController.prototype.login = function() {
-	var _this = this;
-	this.Auth.auth(this.username, this.password)
-		.then(function(result) {
-			_this.authenticated = result;
-		});
+	vm.login = function() {
+		vm.Auth.auth(this.username, this.password);
+	}
 }

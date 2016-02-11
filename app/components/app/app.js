@@ -2,6 +2,7 @@ var app = angular.module('myApp', [
 	'ngComponentRouter',
 	'app.templates',
 	'app.home',
+	'app.navbar',
 	'app.about',
 	'app.login',
 	'app.admin',
