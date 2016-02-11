@@ -1,12 +1,8 @@
-angular.module('app.login', ['app.services.auth']).directive('login', LoginRoute);
-
-function LoginRoute(){
-	return {
-		templateUrl: 'routes/login/login.html',
-		controller: ['Auth', LoginController],
-		controllerAs: 'vm'
-	};
-}
+angular.module('app.login', ['app.services.auth']).component('login', {
+	templateUrl: 'routes/login/login.html',
+	controller: ['Auth', LoginController],
+	controllerAs: 'vm'
+});
 
 function LoginController(Auth) {
 	var _this = this;
