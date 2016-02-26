@@ -1,11 +1,11 @@
 angular.module('app.admin.dashboard', []).component('dashboard', {
   templateUrl: 'routes/dashboard/dashboard.html',
-  $canActivate: ['Auth', '$router', function(Auth, $router) {
+  $canActivate: ['Auth', '$rootRouter', function(Auth, $rootRouter) {
     return Auth.check().then(function(auth) {
       if (auth) {
         return true;
       } else {
-        $router.navigate(['/Login']);
+        $rootRouter.navigate(['/Login']);
         return false;
       }
     });
