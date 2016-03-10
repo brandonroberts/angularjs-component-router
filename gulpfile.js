@@ -22,7 +22,7 @@ gulp.task('default', [
 
 gulp.task('deps', function() {
     return gulp.src([
-        'lib/angular_1_router.js'
+        'node_modules/@angular/router/angular1/angular_1_router.js'
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('dependencies.js'))
@@ -37,7 +37,7 @@ gulp.task('build', function() {
     .pipe(sourcemaps.init())
     .pipe(concat('bundle.js'))
     //.pipe(headerfooter.header("(function() {\n"))
-    //.pipe(headerfooter.footer("}());\n"))    
+    //.pipe(headerfooter.footer("}());\n"))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/'));
 });
