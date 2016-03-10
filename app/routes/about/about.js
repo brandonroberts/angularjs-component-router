@@ -1,5 +1,5 @@
 angular.module('app.about', []).component('about', {
-  template: 'About {{ vm.name }}',
+  templateUrl: 'routes/about/about.html',
   controllerAs: 'vm',
   controller: function() {
     var vm = this;
